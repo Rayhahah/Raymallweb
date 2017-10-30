@@ -1,0 +1,107 @@
+/*
+统一的结构样式
+ */
+/*css reset*/
+/*去除DOM树中默认的属性*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #cccccc;
+    /*字体大小 行间距 字体*/
+    font: 12px/1.5 tahoma, arial, Microsoft YaHei, sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    display: block;
+    border: none;
+}
+
+label {
+    /*手指的图标*/
+    cursor: pointer;
+}
+
+input[type='checkbox'] {
+    cursor: pointer;
+}
+
+/*定宽布局*/
+.w {
+    width: 1080px;
+    margin: 0 auto;
+    /*有需要绝对定位的就以当前为相对基准*/
+    position: relative;
+    /*清除浮动，超出边界不显示*/
+    overflow: hidden;
+}
+
+/*适配大屏*/
+.large .w {
+    width: 1600px;
+}
+
+/*全局通用样式*/
+/*隐藏*/
+.hide {
+    display: none;
+}
+
+/*超链样式*/
+.link {
+    color: #999999;
+    cursor: pointer;
+    /*去除下划线*/
+    text-decoration: none;
+}
+
+/*指上去就变色*/
+.link:hover {
+    color: #e80012;
+}
+
+.link-text {
+    color: #999999;
+    text-decoration: none;
+}
+
+/*通用按钮样式*/
+.btn {
+    display: inline-block;
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    vertical-align: middle;
+    border: none;
+    background: #c60023;
+    font-size: 17px;
+    font-weight: bold;
+    color: #ffffff;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-mini {
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+    padding: 0 10px;
+}
+
+.loading {
+    margin: 10px auto;
+    display: block;
+    width: 65px;
+    height: 65px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: url("../../image/icon/loading.gif") no-repeat;
+    opacity: .6;
+}
