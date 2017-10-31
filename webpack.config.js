@@ -13,12 +13,13 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 // 环境变量配置，dev / online
 var WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
 //根据名字获取Html-webpack-plugin参数配置
-var getHtmlConfig = function (name) {
+var getHtmlConfig = function (name,title) {
     return {
         //html的原始模板
         template: './src/view/' + name + '.html',
         //文件输出目录
         filename: 'view/' + name + '.html',
+        title  : title,
         //true的话就可以不用手写js和css的引入
         inject: true,
         //会在js和css后面加入版本号
@@ -35,7 +36,8 @@ var config = {
         //配置webpack-dev-server
         'common': ['./src/page/common/index.js'],
         'index': ['./src/page/index/index.js'],
-        'login': ['./src/page/login/index.js']
+        'login': ['./src/page/login/index.js'],
+        'result': ['./src/page/result/index.js']
     },
     output: {
         //文件生成的路径
@@ -58,7 +60,9 @@ var config = {
             {test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader")},
             //探测所有图片资源，limit的作用是当大小小于100则会打成base64，否则就会放到资源文件夹里面
             //指定名字并且保留扩展名
-            {test: /\.(gif|png|jpg|woff|svg|ttf|eot)\??.*$/, loader: 'url-loader?limit=100&name=resource/[name].[ext]'}
+            {test: /\.(gif|png|jpg|woff|svg|ttf|eot)\??.*$/, loader: 'url-loader?limit=100&name=resource/[name].[ext]'},
+            //添加模板的loader支持
+            {test: /\.string$/, loader:'html-loader'}
         ]
     },
     resolve: {
@@ -69,7 +73,7 @@ var config = {
             page: __dirname + '/src/page',
             view: __dirname + '/src/view',
             service: __dirname + '/src/service',
-            image: __dirname + '/src/image',
+            image: __dirname + '/src/image'
         }
     },
     plugins: [
@@ -85,14 +89,16 @@ var config = {
         //css单独打包到文件里
         new ExtractTextPlugin("css/[name].css"),
         //项目模板参数
-        new HtmlWebpackPlugin(getHtmlConfig('index')),
-        new HtmlWebpackPlugin(getHtmlConfig('login'))
+        new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
+        new HtmlWebpackPlugin(getHtmlConfig('login','用户登录')),
+        new HtmlWebpackPlugin(getHtmlConfig('result','操作结果'))
     ],
     devServer: {
         //使用inline模式，而非iframe模式
         inline: true,
         //热部署
-        hot: true
+        hot: true,
+        progress : true
     }
 };
 if ('dev' === WEBPACK_ENV) {

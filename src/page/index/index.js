@@ -4,7 +4,12 @@
  */
 require('./index.css');
 require('../common/nav/index.js');
+require('../common/header/index.js');
+var navSide = require('../common/nav-side/index.js');
 require('../../util/rm.js');
+navSide.init({
+    name : 'order-list'
+});
 
 // // $('body').html('hello everybody');
 // var $$ = require('jquery');

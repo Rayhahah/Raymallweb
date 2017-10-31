@@ -48,9 +48,10 @@ var _rm = {
         return result ? decodeURIComponent(result[2]) : null;
     },
     //渲染HTML模板
+    //使用Hogan，可以去细看
     renderHtml: function (htmlTemplate, data) {
         var template = Hogan.compile(htmlTemplate),
-            result = template.render(template);
+            result = template.render(data);
         return result;
     },
     // 成功提示

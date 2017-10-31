@@ -1,0 +1,34 @@
+/*通用头布局的样式*/
+.header .logo {
+    /*绝对定位（脱离文档流），使用搜索框来撑开文档*/
+    /*以上一个元素的末尾作为起始位置*/
+    position: absolute;
+    left: 60px;
+    top: 34px;
+    display: block;
+    font-size: 36px;
+    color: #c60023;
+    font-weight: bold;
+}
+
+.header .search-con {
+    /*上右下左*/
+    padding: 40px 0 30px 250px;
+}
+
+.header .search-con .search-input {
+    width: 550px;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+    font-size: 15px;
+    border: 2px solid #c60023;
+    /*选中状态下的蓝色框体*/
+    outline: none;
+}
+
+.header .search-con .search-btn {
+    position: absolute;
+    height: 44px;
+    width: 90px;
+}
