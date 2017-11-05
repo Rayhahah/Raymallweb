@@ -9,6 +9,7 @@
     font-size: 36px;
     color: #c60023;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .header .search-con {
@@ -31,4 +32,15 @@
     position: absolute;
     height: 44px;
     width: 90px;
+}
+
+.crumb{
+    height: 50px;
+    line-height: 50px;
+    background: #dedede;
+    color: #888;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-top: 2px solid #c60023;
 }

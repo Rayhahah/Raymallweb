@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= htmlWebpackPlugin.options.title%> - Raymall</title>
+</head>
+<body>
+<%= require('html-loader!./layout/nav-simple.html') %>
+<div class="page-wrap">
+    <!--定宽布局-->
+    <div class="w">
+        <!--用户操作框体-->
+        <div class="user-con">
+            <div class="user-title">找回密码</div>
+            <div class="user-box">
+                <!--错误提示-->
+                <div class="error-item">
+                    <i class="fa fa-minus-circle error-icon"></i>
+                    <p class="err-msg">Error</p>
+                </div>
+                <div class="step-con step-username">
+                    <p class="user-item-text">请输入用户名</p>
+                    <!--用户名输入框体-->
+                    <div class="user-item">
+                        <label for="username" class="user-label">
+                            <i class="fa fa-user"></i>
+                        </label>
+                        <input class="user-content" id="username" placeholder="请输入用户名" autocomplete="off">
+                    </div>
+                    <!--登陆按钮-->
+                    <a class="btn btn-submit" id="submit-username">下一步</a>
+                </div>
+
+                <div class="step-con step-question">
+                    <p class="user-item-text">密码提示问题：<span class="question"></span></p>
+                    <!--问题答案输入框体-->
+                    <div class="user-item">
+                        <label for="answer" class="user-label">
+                            <i class="fa fa-key"></i>
+                        </label>
+                        <input class="user-content" id="answer" placeholder="请输入问题答案" autocomplete="off">
+                    </div>
+                    <!--答案确认按钮-->
+                    <a class="btn btn-submit" id="submit-question">下一步</a>
+                </div>
+
+                <div class="step-con step-password">
+                    <p class="user-item-text">请输入新密码</p>
+                    <!--问题答案输入框体-->
+                    <div class="user-item">
+                        <label for="password" class="user-label">
+                            <i class="fa fa-lock"></i>
+                        </label>
+                        <input type="password" class="user-content" id="password" placeholder="请输入新密码" autocomplete="off">
+                    </div>
+                    <!--答案确认按钮-->
+                    <a class="btn btn-submit" id="submit-password">下一步</a>
+                </div>
+
+
+                <div class="link-item">
+                    <a href="./user-login.html" class="link">返回登陆>></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%= require('html-loader!./layout/footer.html') %>
+</body>
+</html>

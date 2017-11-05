@@ -23,6 +23,7 @@
     "webpack-dev-server": "^1.16.5"
   },
   "dependencies": {
+    "fastify": "^0.31.0",
     "font-awesome": "^4.7.0"
   }
 }

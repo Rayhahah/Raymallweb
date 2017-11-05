@@ -1,0 +1,13 @@
+.form-line{
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+
+}
+.form-line .label{
+    width: 60px;
+    /*span标签没有宽度，需要设置为inline-block*/
+    display: inline-block;
+    text-align: center;
+
+}
