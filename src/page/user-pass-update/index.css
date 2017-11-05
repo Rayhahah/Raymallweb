@@ -1,0 +1,21 @@
+.form-line {
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.form-line .label {
+    width: 80px;
+    /*span标签没有宽度，需要设置为inline-block*/
+    display: inline-block;
+    text-align: center;
+}
+
+/*input是不能继承父标签的属性的*/
+.form-line .input {
+    height: 25px;
+    line-height: 25px;
+    font-size: 14px;
+    width: 200px;
+}

@@ -80,7 +80,7 @@ var _rm = {
     },
     //统一登陆请求
     doLogin: function () {
-        window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+        window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
     },
     //返回首页
     goHome: function () {
@@ -89,5 +89,7 @@ var _rm = {
 };
 
 module.exports = _rm;
+
+
 
 
