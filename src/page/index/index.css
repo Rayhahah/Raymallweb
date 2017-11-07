@@ -1,4 +1,151 @@
-body {
-    /*background: url("../../image/cover.jpg");*/
-    background: #f6f6f6;
+/*关键字列表*/
+.keywords-list {
+    float: left;
+    width: 240px;
+    padding: 10px 0;
+    margin-right: 10px;
+    background: #666;
+    color: #fff;
+    height: 350px;
+}
+
+.keywords-list .keywords-item {
+    padding-left: 10px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+}
+
+.keywords-list .keywords-item:hover {
+    background: #999;
+}
+
+.keywords-list .keywords-item .link {
+    margin-right: 5px;
+    color: #fff;
+}
+
+.keywords-list .keywords-item .link:hover {
+    color: #c60023;
+}
+
+/*轮播图*/
+.banner-con {
+    width: 830px;
+    float: left;
+    background: #eee;
+    height: 370px;
+}
+
+.banner-con .loading {
+    margin-top: 150px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.banner-con .banner-img {
+    /*unslider不设置的话默认使用图片的原始高度和宽度*/
+    width: 100%;
+    height: 370px;
+}
+
+/*轮播图前一张和后一张*/
+.banner-con .banner-arrow {
+    position: absolute;
+    top: 160px;
+    width: 30px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    background: #ccc;
+    /*不支持IE8*/
+    background: rgba(0, 0, 0, .2);
+    cursor: pointer;
+}
+
+.banner-con .banner-arrow:hover {
+    background: #aaa;
+    /*不支持IE8*/
+    background: rgba(0, 0, 0, .5);
+}
+
+.banner-con .banner-arrow.prev {
+    left: 0px;
+}
+
+.banner-con .banner-arrow.next {
+    right: 0px;
+}
+
+/*floor*/
+.floor-wrap .floor-title {
+    height: 50px;
+    line-height: 50px;
+    color: #c6945c;
+    font-size: 20px;
+    font-weight: normal;
+    border-bottom: 2px solid #c6945c;
+}
+
+/*nth-child表示标签下的重复第几个元素*/
+.floor-wrap:nth-child(2) .floor-title {
+    color: #4780c6;
+    border-bottom: 2px solid #4780c6;
+}
+
+.floor-wrap:nth-child(3) .floor-title {
+    color: #38c67e;
+    border-bottom: 2px solid #38c67e;
+}
+
+.floor-wrap:nth-child(4) .floor-title {
+    color: #ab55c6;
+    border-bottom: 2px solid #ab55c6;
+}
+
+.floor-wrap:nth-child(5) .floor-title {
+    color: #c6444d;
+    border-bottom: 2px solid #c6444d;
+}
+
+.floor-wrap .floor-list {
+    /*因为宽度不够所以撑开20px*/
+    margin-right: -20px;
+    /*清除浮动，让list可以撑开高度*/
+    overflow: hidden;
+}
+
+.floor-wrap .floor-list .floor-item {
+    /*为了让它里面的内容以它为基础做定位*/
+    position: relative;
+    width: 200px;
+    height: 220px;
+    margin: 15px 20px 15px 0;
+    float: left;
+    cursor: pointer;
+    background: #fff;
+}
+
+.floor-wrap .floor-list .floor-item:hover {
+    /*盒子阴影，不兼容IE8*/
+    box-shadow: 2px 2px 7px #ddd;
+}
+
+.floor-wrap .floor-list .floor-item .floor-text {
+    position: absolute;
+    top: 12px;
+    left: 20px;
+    font-size: 16px;
+    color: #555;
+}
+
+.floor-wrap .floor-list .floor-item .floor-img {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    width: 80%;
+    font-size: 16px;
+    color: #555;
 }

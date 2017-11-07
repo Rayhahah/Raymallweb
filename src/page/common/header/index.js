@@ -10,9 +10,10 @@ var _rm = require('util/rm.js');
 var header = {
     init: function () {
         this.bindEvent();
+        this.onload();
     },
     onload: function () {
-        var keyword = _rm.getUrlParam('keywords');
+        var keyword = _rm.getUrlParam('keyword');
         if (keyword) {
             $('#search-input').val(keyword);
         }

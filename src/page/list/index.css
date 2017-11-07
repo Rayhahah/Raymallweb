@@ -1,0 +1,106 @@
+/*排序按钮*/
+.sort-con {
+    overflow: auto;
+}
+
+.sort-con .sort-item {
+    float: left;
+    display: inline-block;
+    position: relative;
+    padding: 0 8px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid #ccc;
+    color: #333;
+    cursor: pointer;
+    margin-right: -1px;
+    background: #fff;
+}
+
+.sort-con .sort-item.active {
+    background: #c60023;
+    border: 1px solid #c60023;
+    color: #fff;
+}
+
+.sort-con .sort-item .fa-sort-desc {
+    /*移动向下图标到向上图标的下面*/
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+/*设置排序图片的深浅*/
+.sort-con .sort-item.asc .fa-sort-desc {
+    opacity: .6;
+}
+
+.sort-con .sort-item.desc .fa-sort-asc {
+    opacity: .6;
+}
+
+/*列表容器*/
+.p-list-con {
+    margin-top: 15px;
+    /*空出多余的宽*/
+    margin-right: -20px;
+    overflow: hidden;
+}
+
+/*列表条目*/
+.p-list-con .p-item {
+    position: relative;
+    width: 180px;
+    float: left;
+    padding: 10px;
+    margin: 0 20px 20px 0;
+    background: #fff;
+}
+
+.p-list-con .p-item:hover {
+    /*盒子阴影，不兼容IE8*/
+    box-shadow: 2px 2px 7px #ddd;
+}
+
+.p-list-con .p-item .p-img-con {
+    width: 180px;
+    height: 200px;
+}
+
+.p-list-con .p-item .p-img-con .p-img {
+    width: 100%;
+    height: 100%;
+}
+
+.p-list-con .p-item .p-price-con {
+    height: 30px;
+    line-height: 30px;
+}
+
+.p-list-con .p-item .p-price-con .p-price {
+    font-size: 16px;
+    color: #e7380d;
+    font-weight: bold;
+}
+
+.p-list-con .p-item .p-name-con {
+    height: 40px;
+    overflow: hidden;
+}
+
+.p-list-con .p-item .p-name-con .p-name {
+    line-height: 20px;
+    margin-bottom: 10px;
+    color: #666;
+    text-decoration: none;
+}
+/*错误信息*/
+.err-tip {
+    height: 70px;
+    line-height: 70px;
+    color: #e7380d;
+    text-align: center;
+    background: #eee;
+    font-weight: bold;
+    font-size: 18px;
+}

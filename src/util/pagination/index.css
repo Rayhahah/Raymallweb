@@ -1,0 +1,40 @@
+.pg-content {
+    text-align: center;
+    color: #333;
+}
+
+.pg-content .pg-item {
+    display: inline-block;
+    height: 36px;
+    margin: 0px 10px 10px 0px;
+    padding: 0 15px;
+    line-height: 36px;
+    font-size: 13px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background: #eee;
+    /*取消用户选择，适配*/
+    -moz-user-select : none;
+    -webkit-user-select : none;
+    -ms-user-select : none;
+    user-select : none;
+}
+
+.pg-content .pg-item.disabled {
+    background: none;
+    color: #ccc;
+    cursor: auto;
+}
+
+.pg-content .pg-item.active {
+    background: #c60023;
+    color: #fff;
+}
+
+.pg-content .pg-total {
+    font-weight: bold;
+    font-size: 13px;
+    background: none;
+    cursor: auto;
+    margin-left: 20px;
+}

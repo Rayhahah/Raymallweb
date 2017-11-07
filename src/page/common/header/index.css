@@ -37,10 +37,10 @@
 .crumb{
     height: 50px;
     line-height: 50px;
-    background: #dedede;
+    background: #eee;
     color: #888;
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 15px;
-    border-top: 2px solid #c60023;
+    border-top: 1px solid #c60023;
 }
