@@ -43,7 +43,7 @@ var page = {
         if (validateResult.status) {
             // 验证成功
             _user.login(formData, function (res) {
-                window.location.href = _rm.getUrlParam('redirct') || './index.html';
+                window.location.href = _rm.getUrlParam('redirect') || './index.html';
             }, function (err) {
                 formError.show(err);
             });
