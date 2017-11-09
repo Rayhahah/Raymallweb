@@ -35,7 +35,6 @@ var nav = {
                 .find('.username').text(res.username);//查找他的子节点并修改
         }, function (errMsg) {
             //doNothing
-            console.log('未登录呀');
         });
     },
     loadCartCount: function () {

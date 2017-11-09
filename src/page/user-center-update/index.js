@@ -49,7 +49,9 @@ var page = {
     },
     //加载用户信息
     loadUserInfo: function () {
+
         var userHtml = '';
+        _rm.showLoading('.panel-body');
         _user.getUserInfo(function (res) {
             userHtml = _rm.renderHtml(templateHtml, res);
             $('.panel-body').html(userHtml)

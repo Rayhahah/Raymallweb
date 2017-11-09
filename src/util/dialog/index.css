@@ -1,0 +1,76 @@
+.ray-dialog {
+    /*这样就可以实现全屏覆盖*/
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #eee;
+    background: rgba(0, 0, 0, .4);
+    /*防止有层级过高的挡住dialog*/
+    z-index: 1001;
+    /*让dialog不能左右滚动*/
+    overflow-x: hidden;
+    /*防止内容过长超出可视区范围*/
+    overflow-y: auto;
+}
+.ray-dialog .ray-dialog-container{
+    width: 700px;
+    background: #fff;
+    margin: 120px auto;
+    border-radius: 5px;
+    /*text-align: center;*/
+    padding: 30px 0 15px 0;
+    opacity: 0;
+    /*box-shadow: 5px 5px 20px #eee;*/
+}
+
+.ray-dialog .ray-dialog-container .ray-dialog-message{
+    height: 70px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 25px;
+    color: #c60023;
+    padding: 10px;
+    font-weight: bold;
+    margin-bottom: 20px;
+
+    /*取消用户选择，适配*/
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.ray-dialog .ray-dialog-container .ray-dialog-opera{
+    text-align: center;
+}
+
+.ray-dialog .ray-dialog-container .ray-dialog-cancel{
+    display: inline-block;
+    font-size: 20px;
+    width: 80px;
+    background: #ccc;
+    color: #555;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+.ray-dialog .ray-dialog-container .ray-dialog-confirm{
+    display: inline-block;
+    font-size: 20px;
+    width: 80px;
+    background: #c60023;
+    color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+    margin-left: 80px;
+    cursor: pointer;
+}
+.ray-dialog .ray-dialog-container .ray-dialog-confirm.center{
+    margin: 0;
+}
+

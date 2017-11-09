@@ -6,6 +6,7 @@
  */
 
 require('./index.css');
+var _sticky = require('util/sticky-search/index.js');
 var _rm = require('util/rm.js');
 var header = {
     init: function () {
@@ -21,18 +22,22 @@ var header = {
     bindEvent: function () {
         var _this = this;
         $('#search-btn').click(function () {
-            _this.searhSubmit();
+            var keyword = $.trim($('#search-input').val());
+            _this.searhSubmit(keyword);
         });
         // 输入回车做搜索提交
         $('#search-input').keyup(function (e) {
             if (e.keyCode === 13) {
-                _this.searhSubmit();
+                var keyword = $.trim($('#search-input').val());
+                _this.searhSubmit(keyword);
             }
+        });
+        _sticky.initSticky('请输入要商品名称', _rm.getUrlParam('keyword'), '.header', function (key) {
+            _this.searhSubmit(key);
         });
     },
     // 搜索的提交
-    searhSubmit: function () {
-        var keyword = $.trim($('#search-input').val());
+    searhSubmit: function (keyword) {
         if (keyword) {
             window.location.href = './list.html?keyword=' + keyword;
         } else {

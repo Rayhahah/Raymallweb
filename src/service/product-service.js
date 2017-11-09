@@ -7,8 +7,7 @@
 
 var _rm = require('util/rm.js');
 var _product = {
-    //用户注册
-    //keyword 和categoryId必须要传一个，且不能同时存在
+    //获取产品列表
     getProductList: function (listParams, resolve, reject) {
         _rm.request({
             url: _rm.getServerUrl('/product/list.do'),

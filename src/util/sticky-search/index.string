@@ -1,0 +1,7 @@
+<div class="sticky-search-wrap">
+    <div class="sticky-search-con">
+    <span class="sticky-logo">Raymall</span>
+        <input type="text" class="sticky-input" id="sticky-input" placeholder="{{tips}}"/>
+        <span class="sticky-btn" id="sticky-btn">搜索</span>
+    </div>
+</div>
