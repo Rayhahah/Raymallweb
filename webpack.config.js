@@ -65,7 +65,7 @@ var config = {
         //文件访问的路径,不设置的话webpack-dev-server无法热编译
         //最后的斜杠需要添加，默认js和css文件会自动添加，但是url-loader是不会自动添加的
         // publicPath: '/dist/',
-        publicPath: 'dev' === WEBPACK_ENV ? '/dist/' : '//s.rayhahah.com/raymall/dist/',
+        publicPath: 'dev' === WEBPACK_ENV ? '/dist/' : '//s.rayhahah.com/Raymallweb/dist/',
         //硬编码目标文件无法做到输出多个文件
         // filename: 'app.js'
         //这样就会根据入口的名字来对应生成目标文件，ps：webpack不会删除之前的文件
