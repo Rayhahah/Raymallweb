@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%= require('html-loader!./layout/head-common.html') %>
+    <title><%= htmlWebpackPlugin.options.title%> - Raymall</title>
+</head>
+<body>
+<%= require('html-loader!./layout/nav.html') %>
+<%= require('html-loader!./layout/header.html') %>
+<div class="crumb">
+    <div class="w">
+        <div class="crumb-con">
+            <a href="./index.html" class="link">Raymall</a>
+            <span> ></span>
+            <span class="link-text"><%= htmlWebpackPlugin.options.title%></span>
+        </div>
+    </div>
+</div>
+<div class="page-wrap w">
+    <%= require('html-loader!./layout/nav-side.html') %>
+    <div class="content with-nav">
+        <div class="panel">
+            <div class="panel-title"><%= htmlWebpackPlugin.options.title%></div>
+            <div class="panel-body">
+                <div class="about-line">
+                    <span class="about-text">简述：</span>
+                    <span class="about-text enhance">这是一个学习用的商城项目，完整包含前后端的开发！！！如果你看到这个页面，说明我已经完全功能都做完啦哈哈哈哈</span>
+                </div>
+                <div class="about-line">
+                    <span class="about-text">前端项目地址：</span>
+                    <a href="https://github.com/Rayhahah/Raymallweb" class="link" target="_blank">RaymallWeb</a>
+                </div>
+                <div class="about-line">
+                    <span class="about-text">后端项目地址：</span>
+                    <a href="https://github.com/Rayhahah/Raymall" class="link" target="_blank">Raymall</a>
+                </div>
+                <div class="about-line">
+                    <span class="about-text">我个人开发的安卓App：</span>
+                    <a href="https://github.com/Rayhahah/EasySports" class="link" target="_blank">EasySport</a>
+                </div>
+                <div class="about-line">
+                    <span class="about-text">基于WordPress的个人博客：</span>
+                    <a href="http://blog.rayhahah.com" class="link" target="_blank">Rayhahah.com</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%= require('html-loader!./layout/footer.html') %>
+</body>
+</html>

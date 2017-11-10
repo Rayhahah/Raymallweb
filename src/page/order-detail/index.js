@@ -33,8 +33,8 @@ var page = {
         $(document).on('click', '.order-cancel', function () {
             _rm.confirmTips("确认取消订单？", function () {
                 _order.cancelOrder(_this.data.orderNumber, function (res) {
-                    _rm.successTips('该订单取消成功');
                     _this.loadDetail();
+                    _rm.successTips('该订单取消成功');
                 }, function (errMsg) {
                     _rm.errorTips(errMsg);
                 });
@@ -52,7 +52,7 @@ var page = {
             orderDatailHtml = _rm.renderHtml(templateHtml, res);
             $content.html(orderDatailHtml);
         }, function (errMsg) {
-            _rm.showErrorMessage($content,errMsg);
+            _rm.showErrorMessage($content, errMsg);
         });
     },
     dataFilter: function (data) {
