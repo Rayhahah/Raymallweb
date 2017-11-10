@@ -100,7 +100,7 @@ var page = {
             var addressHtml = _rm.renderHtml(templateAddress, res);
             $('.address-con').html(addressHtml);
         }, function (errMsg) {
-            $('.address-con').html('<p class="err-tip">地址加载失败，请刷新后重试~~~>_<~~</p>');
+            _rm.showErrorMessage('.address-con','地址加载失败，请刷新后重试~~~>_<~~');
         });
     },
     loadProductList: function () {
@@ -110,7 +110,7 @@ var page = {
             var productHtml = _rm.renderHtml(templateProduct, res);
             $('.product-con').html(productHtml);
         }, function (errMsg) {
-            $('.product-con').html('<p class="err-tip">商品清单加载失败，请刷新后重试~~~>_<~~</p>');
+            _rm.showErrorMessage('.product-con','商品清单加载失败，请刷新后重试~~~>_<~~');
         })
     },
     //处理地址列表选中状态

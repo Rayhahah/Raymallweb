@@ -85,7 +85,7 @@ var page = {
             $pageWrap.html(html);
             _this.refreshCountBtn($('.p-count').val(), res.stock);
         }, function (errMsg) {
-            $pageWrap.html('<p class="err-tip">此商品太淘气找不到了</p>>');
+            _rm.showErrorMessage($pageWrap,'此商品太淘气找不到了');
         })
     },
     // 数据匹配

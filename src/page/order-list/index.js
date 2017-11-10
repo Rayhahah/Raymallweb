@@ -50,7 +50,7 @@ var page = {
                 pages: res.pages
             });
         }, function (errMsg) {
-            $orderList.html('<p class="err-tip">加载订单失败，请刷新后重试 ~~>_<~~</p>');
+            _rm.showErrorMessage($orderList,'加载订单失败，请刷新后重试 ~~>_<~~');
         });
     },
     //加载分页信息

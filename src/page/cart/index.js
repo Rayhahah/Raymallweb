@@ -30,7 +30,7 @@ var page = {
         this.loadCart();
     },
     showCartError: function () {
-        $('.page-wrap').html('<p class="err-tip">哪里不对了，刷新一下吧~~>_<~~</p>>');
+        _rm.showErrorMessage('.page-wrap','哪里不对了，刷新一下吧~~>_<~~');
     },
     bindEvent: function () {
         var _this = this;

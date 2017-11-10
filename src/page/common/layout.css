@@ -115,6 +115,7 @@ input[type='checkbox'] {
     padding: 0 10px;
 }
 
+/*加载中动画*/
 .loading {
     margin: 10px auto;
     display: block;
@@ -124,4 +125,15 @@ input[type='checkbox'] {
     border-radius: 10px;
     background: url("../../image/icon/loading.gif") no-repeat;
     opacity: .6;
+}
+
+/*错误信息*/
+.err-tip {
+    height: 70px;
+    line-height: 70px;
+    color: #e7380d;
+    text-align: center;
+    background: #eee;
+    font-weight: bold;
+    font-size: 18px;
 }

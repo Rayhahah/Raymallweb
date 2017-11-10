@@ -112,6 +112,14 @@ var _rm = {
             $(target).html('<div class="loading"></div>');
         }
     },
+    //显示错误提示信息
+    showErrorMessage: function (target, errMsg) {
+        if (target instanceof jQuery) {
+            target.html('<p class="err-tip">' + errMsg + '</p>');
+        } else {
+            $(target).html('<p class="err-tip">' + errMsg + '</p>');
+        }
+    },
     // 字段的验证，支持非空、手机、邮箱的判断
     validate: function (value, type) {
         var value = $.trim(value);

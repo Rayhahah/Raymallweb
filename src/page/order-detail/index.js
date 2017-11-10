@@ -4,15 +4,11 @@
  * @time 2017/11/9
  * @fuction
  */
-
-
-
 require('./index.css');
 require('page/common/nav/index.js');
 require('page/common/header/index.js');
 var _order = require('service/order-service.js');
 var navSide = require('page/common/nav-side/index.js');
-var Pagination = require('util/pagination/index.js');
 var _rm = require('util/rm.js');
 var templateHtml = require('./index.string');
 
@@ -34,7 +30,6 @@ var page = {
     },
     bindEvent: function () {
         var _this = this;
-
         $(document).on('click', '.order-cancel', function () {
             _rm.confirmTips("确认取消订单？", function () {
                 _order.cancelOrder(_this.data.orderNumber, function (res) {
@@ -45,7 +40,6 @@ var page = {
                 });
             });
         });
-
     },
     //加载订单数据
     loadDetail: function () {
@@ -58,13 +52,12 @@ var page = {
             orderDatailHtml = _rm.renderHtml(templateHtml, res);
             $content.html(orderDatailHtml);
         }, function (errMsg) {
-            $content.html('<p class="err-tip">' + errMsg + '</p>');
+            _rm.showErrorMessage($content,errMsg);
         });
     },
     dataFilter: function (data) {
         data.needPay = data.status == 10;
         data.isCancelable = data.status == 10;
-
     }
 };
 

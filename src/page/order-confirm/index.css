@@ -137,17 +137,6 @@
     text-align: center;
 }
 
-/*错误信息*/
-.err-tip {
-    height: 70px;
-    line-height: 70px;
-    color: #e7380d;
-    text-align: center;
-    background: #eee;
-    font-weight: bold;
-    font-size: 18px;
-}
-
 /*modal 编辑弹窗*/
 .modal {
     /*这样就可以实现全屏覆盖*/
