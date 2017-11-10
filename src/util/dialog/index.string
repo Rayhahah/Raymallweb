@@ -1,0 +1,22 @@
+<div class="ray-dialog ray-close">
+    <div class="ray-dialog-container">
+        <div class="ray-dialog-message">
+            {{message}}
+        </div>
+        <div class="ray-dialog-opera">
+        {{#isConfirm}}
+         <span class="ray-dialog-cancel">
+                        取消
+         </span>
+         <span class="ray-dialog-confirm">
+             确认
+         </span>
+        {{/isConfirm}}
+        {{^isConfirm}}
+        <span class="ray-dialog-confirm center">
+            确认
+        </span>
+        {{/isConfirm}}
+        </div>
+    </div>
+</div>

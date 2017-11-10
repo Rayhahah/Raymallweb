@@ -16,7 +16,6 @@ var _else = {
                         if (res.list[i].status !== 1) {
                             continue;
                         }
-                        console.log('get detail id =' + res.list[i].id);
                         //获取商品详情
                         _product.getProductDetail(res.list[i].id, function (data) {
                             listProduct.push({
@@ -31,7 +30,6 @@ var _else = {
                                 price: data.price
                             });
                         }, function (errMsg) {
-                            console.log(errMsg);
                         });
                     }
                 }, function (errMsg) {
@@ -57,7 +55,6 @@ var _else = {
                         status: listProduct[i].status,
                         price: listProduct[i].price
                     }, function (res) {
-                        console.log('insert success');
                     }, function (errMsg) {
 
                     });

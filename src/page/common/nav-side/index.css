@@ -1,13 +1,22 @@
 .nav-side{
+    margin-right: 8px;
     float: left;
-    width: 130px;
+    width: 118px;
     /*需要提供一个高度，才可以让content不靠过来*/
     min-height: 100px;
 }
 .nav-side .nav-item{
     line-height: 25px;
-    font-size: 13px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+    background: #eee;
 }
+.nav-side .nav-item.active {
+    background: #fff;
+    border-right: 2px solid #c60023;
+}
+
 .nav-side .nav-item .link{
     color: #888;
 }

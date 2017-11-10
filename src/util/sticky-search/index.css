@@ -1,0 +1,57 @@
+
+.sticky-search-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.sticky-search-wrap .sticky-search-con {
+    position: relative;
+    margin-top: 0px;
+    text-align: center;
+    opacity: 0;
+}
+.sticky-search-wrap .sticky-search-con .sticky-logo{
+    position: absolute;
+    left: 470px;
+    font-weight: bold;
+    font-size: 28px;
+    color: #c60023;
+    color: rgba(198,0,35,.9);
+    cursor: pointer;
+}
+
+.sticky-search-wrap .sticky-search-con .sticky-input {
+    width: 300px;
+    height: 35px;
+    line-height: 35px;
+    padding-left: 10px;
+    font-size: 15px;
+    border: 2px solid #c60023;
+    border: 2px solid rgba(198,0,35,.9);
+    /*选中状态下的蓝色框体*/
+    outline: none;
+    background: rgba(255,255,255,.7);
+
+}
+
+.sticky-search-wrap .sticky-search-con .sticky-btn {
+    display: inline-block;
+    position: absolute;
+    height: 39px;
+    width: 40px;
+    background:#c60023;
+    background:rgba(198,0,35,.9);
+    text-align: center;
+    vertical-align: middle;
+    padding: 0 20px;
+    line-height: 40px;
+    border: none;
+    font-size: 17px;
+    font-weight: bold;
+    color: #ffffff;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+}

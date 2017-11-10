@@ -13,13 +13,13 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 // 环境变量配置，dev / online
 var WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
 //根据名字获取Html-webpack-plugin参数配置
-var getHtmlConfig = function (name,title) {
+var getHtmlConfig = function (name, title) {
     return {
         //html的原始模板
         template: './src/view/' + name + '.html',
         //文件输出目录
         filename: 'view/' + name + '.html',
-        title  : title,
+        title: title,
         //true的话就可以不用手写js和css的引入
         inject: true,
         //会在js和css后面加入版本号
@@ -39,6 +39,10 @@ var config = {
         'list': ['./src/page/list/index.js'],
         'detail': ['./src/page/detail/index.js'],
         'cart': ['./src/page/cart/index.js'],
+        'order-confirm': ['./src/page/order-confirm/index.js'],
+        'order-list': ['./src/page/order-list/index.js'],
+        'order-detail': ['./src/page/order-detail/index.js'],
+        'payment': ['./src/page/payment/index.js'],
         'user-login': ['./src/page/user-login/index.js'],
         'user-register': ['./src/page/user-register/index.js'],
         'user-pass-reset': ['./src/page/user-pass-reset/index.js'],
@@ -70,7 +74,7 @@ var config = {
             //指定名字并且保留扩展名
             {test: /\.(gif|png|jpg|woff|svg|ttf|eot)\??.*$/, loader: 'url-loader?limit=100&name=resource/[name].[ext]'},
             //添加模板的loader支持
-            {test: /\.string$/, loader:'html-loader'}
+            {test: /\.string$/, loader: 'html-loader'}
         ]
     },
     resolve: {
@@ -97,24 +101,28 @@ var config = {
         //css单独打包到文件里
         new ExtractTextPlugin("css/[name].css"),
         //项目模板参数
-        new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
-        new HtmlWebpackPlugin(getHtmlConfig('list','商品列表页')),
-        new HtmlWebpackPlugin(getHtmlConfig('detail','商品详情页')),
-        new HtmlWebpackPlugin(getHtmlConfig('cart','购物车')),
-        new HtmlWebpackPlugin(getHtmlConfig('user-login','用户登录')),
-        new HtmlWebpackPlugin(getHtmlConfig('user-register','用户注册')),
-        new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset','找回密码')),
-        new HtmlWebpackPlugin(getHtmlConfig('user-center','个人中心')),
-        new HtmlWebpackPlugin(getHtmlConfig('user-center-update','修改个人信息')),
-        new HtmlWebpackPlugin(getHtmlConfig('user-pass-update','修改密码')),
-        new HtmlWebpackPlugin(getHtmlConfig('result','操作结果'))
+        new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
+        new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表')),
+        new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情')),
+        new HtmlWebpackPlugin(getHtmlConfig('cart', '购物车')),
+        new HtmlWebpackPlugin(getHtmlConfig('order-confirm', '订单确认')),
+        new HtmlWebpackPlugin(getHtmlConfig('order-list', '订单列表')),
+        new HtmlWebpackPlugin(getHtmlConfig('order-detail', '订单详情')),
+        new HtmlWebpackPlugin(getHtmlConfig('payment', '订单支付')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-login', '用户登录')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-register', '用户注册')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset', '找回密码')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-center', '个人中心')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-center-update', '修改个人信息')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-pass-update', '修改密码')),
+        new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果'))
     ],
     devServer: {
         //使用inline模式，而非iframe模式
         inline: true,
         //热部署
         hot: true,
-        progress : true
+        progress: true
     }
 };
 if ('dev' === WEBPACK_ENV) {

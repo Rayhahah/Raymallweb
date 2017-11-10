@@ -75,7 +75,7 @@ var page = {
         var _this = this,
             html = '',
             $pageWrap = $('.page-wrap');
-        $pageWrap.html('<div class="loading"></div>>');
+        _rm.showLoading('.page-wrap');
         //请求商品详细信息
         _product.getProductDetail(this.data.productId, function (res) {
             // 缓存数据
@@ -85,7 +85,7 @@ var page = {
             $pageWrap.html(html);
             _this.refreshCountBtn($('.p-count').val(), res.stock);
         }, function (errMsg) {
-            $pageWrap.html('<p class="err-tip">此商品太淘气找不到了</p>>');
+            _rm.showErrorMessage($pageWrap,'此商品太淘气找不到了');
         })
     },
     // 数据匹配

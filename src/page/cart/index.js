@@ -30,7 +30,7 @@ var page = {
         this.loadCart();
     },
     showCartError: function () {
-        $('.page-wrap').html('<p class="err-tip">哪里不对了，刷新一下吧~~>_<~~</p>>');
+        _rm.showErrorMessage('.page-wrap','哪里不对了，刷新一下吧~~>_<~~');
     },
     bindEvent: function () {
         var _this = this;
@@ -107,23 +107,23 @@ var page = {
         });
         //单个商品删除
         $(document).on('click', '.cart-delete', function () {
-            if (window.confirm('确认要删除该商品吗？')) {
-                var productId = $(this).parents('.cart-table').data('product-id');
+            var $this = $(this);
+            _rm.confirmTips('确认要删除该商品吗？', function () {
+                var productId = $this.parents('.cart-table').data('product-id');
                 _this.deleteCartProduct(productId);
-            }
+            });
         });
         //删除选中的商品
         $(document).on('click', '.delete-selected', function () {
-            if (window.confirm('确认要删除选中的商品吗？')) {
+            _rm.confirmTips('确认要删除选中的商品吗？', function () {
                 var arrProductIds = [],
                     //:checked 表示取出所有属性为checked 的节点 ，返回一个节点数组
                     $selectedItem = $('.cart-select:checked');
                 for (var i = 0, iLength = $selectedItem.length; i < iLength; i++) {
                     //这个时候的$selectedItem[i]已经不是jQuery对象了，所以需要重新包裹一层jQuery来操作
                     //获取每一个id
-                    arrProductIds.push(
-                        $($selectedItem[i])
-                            .parents('.cart-table').data('product-id'));
+                    arrProductIds.push($($selectedItem[i])
+                        .parents('.cart-table').data('product-id'));
                 }
                 if (arrProductIds.length) {
                     //拼接数组形成字符串，中间介个是 ，  逗号
@@ -131,7 +131,7 @@ var page = {
                 } else {
                     _rm.errorTips('您还没选择要删除的商品');
                 }
-            }
+            });
         });
 
         // 提交购物车
@@ -139,7 +139,7 @@ var page = {
         $(document).on('click', '.btn-submit', function () {
             // 总价大于0就提交
             if (_this.data.cartInfo && _this.data.cartInfo.cartTotalPrice > 0) {
-                window.location.href = './confirm.html';
+                window.location.href = './order-confirm.html';
             } else {
                 _rm.errorTips('请选中商品后提交');
             }

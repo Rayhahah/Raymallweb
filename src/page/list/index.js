@@ -68,13 +68,11 @@ var page = {
             listHtml = '',
             listParams = this.data.listParams,
             $pList = $('.p-list-con');
-        $pList.html('<div class="loading"></div>');
+        _rm.showLoading('.p-list-con');
         //删除参数中不必要的参数
         listParams.categoryId ? (delete listParams.keyword) : (delete listParams.categoryId);
-        console.log(listParams);
         // 请求列表数据
         _product.getProductList(listParams, function (res, msg) {
-            console.log(res);
             listHtml = _rm.renderHtml(templateHtml, {
                 list: res.list
             });

@@ -10,6 +10,7 @@ var _rm = require('util/rm.js');
 
 
 $(function () {
+    _rm.showLoading('.banner-con');
     // 渲染banner的HTML
     var bannerHtml = _rm.renderHtml(templateBanner);
     $('.banner-con').html(bannerHtml);
