@@ -19,6 +19,7 @@ var getHtmlConfig = function (name, title) {
         template: './src/view/' + name + '.html',
         //文件输出目录
         filename: 'view/' + name + '.html',
+        favicon: './favicon.ico',
         title: title,
         //true的话就可以不用手写js和css的引入
         inject: true,
@@ -49,15 +50,22 @@ var config = {
         'user-center': ['./src/page/user-center/index.js'],
         'user-center-update': ['./src/page/user-center-update/index.js'],
         'user-pass-update': ['./src/page/user-pass-update/index.js'],
-        'result': ['./src/page/result/index.js']
+        'result': ['./src/page/result/index.js'],
+        'about': ['./src/page/about/index.js']
     },
     output: {
         //文件生成的路径
         //这个和下面是一样的意思
-        path: './dist',
+        //webpack2.0以后不支持相对路径，所以需要添加_dirname
+        path: __dirname + '/dist/',
+        // path:  './dist/',
         // path: path.resolve(__dirname, 'dist'),
+
+        //publicPath : 表示生成的打包文件引用资源的域名，在正式环境下需要修改
         //文件访问的路径,不设置的话webpack-dev-server无法热编译
-        publicPath: '/dist',
+        //最后的斜杠需要添加，默认js和css文件会自动添加，但是url-loader是不会自动添加的
+        // publicPath: '/dist/',
+        publicPath: 'dev' === WEBPACK_ENV ? '/dist/' : '//s.rayhahah.com/mall/dist/',
         //硬编码目标文件无法做到输出多个文件
         // filename: 'app.js'
         //这样就会根据入口的名字来对应生成目标文件，ps：webpack不会删除之前的文件
@@ -74,7 +82,17 @@ var config = {
             //指定名字并且保留扩展名
             {test: /\.(gif|png|jpg|woff|svg|ttf|eot)\??.*$/, loader: 'url-loader?limit=100&name=resource/[name].[ext]'},
             //添加模板的loader支持
-            {test: /\.string$/, loader: 'html-loader'}
+            {
+                test: /\.string$/,
+                loader: 'html-loader',
+                query: {
+                    //加载文件时做最小化压缩
+                    minimize: true,
+                    //指定是否删除属性的""引号
+                    //不删除的话会和hogan发生冲突
+                    removeAttributeQuotes: false
+                }
+            }
         ]
     },
     resolve: {
@@ -115,7 +133,8 @@ var config = {
         new HtmlWebpackPlugin(getHtmlConfig('user-center', '个人中心')),
         new HtmlWebpackPlugin(getHtmlConfig('user-center-update', '修改个人信息')),
         new HtmlWebpackPlugin(getHtmlConfig('user-pass-update', '修改密码')),
-        new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果'))
+        new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果')),
+        new HtmlWebpackPlugin(getHtmlConfig('about', '关于Raymall'))
     ],
     devServer: {
         //使用inline模式，而非iframe模式
